@@ -14,9 +14,9 @@
 >*Exercises 0.1-0.3*: The basics of **HTML** and **CSS** 
 
 2020/10/2
->*Exercises 0.4-0.6*: Sequential Diagrams depicting **traditional,SPA browser-server interaction** (Submitted)
+>*Exercises 0.4-0.6*: Sequential Diagrams depicting **traditional,SPA browser-server interaction** (Submitted Part0)
 
->*Part 1.a* React's Components(function), JSX, Props
+>*Part 1.a* **React's Components(function)**, **JSX**, **Props**
 
->*Exercises 1.1-1.2*: CourseInfo
+>*Exercises 1.1-1.2*: Built **Multiple Components** to break down complex application (Finished) 
 
