@@ -15,3 +15,8 @@
 
 2020/10/2
 >*Exercises 0.4-0.6*: Sequential Diagrams depicting **traditional,SPA browser-server interaction** (Submitted)
+
+>*Part 1.a* React's Components(function), JSX, Props
+
+>*Exercises 1.1-1.2*: CourseInfo
+
