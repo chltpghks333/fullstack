@@ -20,3 +20,9 @@
 
 >*Exercises 1.1-1.2*: Built **Multiple Components** to break down complex application (Finished) 
 
+2020/10/3
+>*Part 1.b* Basics of **Javascript**
+
+>*Exercises 1.3-1.5*: Passing **arrays** as an argument, "props" (Finished) 
+
+>*Part 1.c-1.d* **State Hooks*, **Destruction** finished right before *Rule of Hooks*
