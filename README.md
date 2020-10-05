@@ -28,4 +28,6 @@
 >*Part 1.c-1.d* **State Hooks*, **Destruction** finished right before *Rule of Hooks*
 
 2020/10/4
->*Exercises 1.6-1.10*: **HTML table** unicafe exercises (Finished) 
+>*Exercises 1.6-1.11*: **HTML table** unicafe exercises (Finished) 
+
+>*Exercisees 1.12-1.14*: anecdotes exercises started 
