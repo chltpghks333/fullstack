@@ -30,4 +30,13 @@
 2020/10/4
 >*Exercises 1.6-1.11*: **HTML table** unicafe exercises (Finished) 
 
->*Exercisees 1.12-1.14*: anecdotes exercises started 
+>*Exercises 1.12-1.14*: anecdotes exercises started 
+
+2020/10/5
+>*Exercises 1.12-1.14*: anecdotes exercises (Finished) 
+
+>*Part 2.a* **Functional Programming JS** used to create multiple components representing array of data
+
+>*Exercises 2.1-2.5* CourseInfo revisited (finished but yet submitted)
+
+
