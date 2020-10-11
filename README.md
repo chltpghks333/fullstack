@@ -37,6 +37,10 @@
 
 >*Part 2.a* **Functional Programming JS** used to create multiple components representing array of data
 
->*Exercises 2.1-2.5* CourseInfo revisited (finished but yet submitted)
+>*Exercises 2.1-2.5*: CourseInfo revisited (finished but yet submitted)
 
+2020/10/6-2020/10/11
+>*Part 2* Effect Hooks, axios library to fetch data from REST API, Alter data in server(get,put,patch,delete, etc)
+
+>*Part 2 Exercises*: fully completed and submitted 
 
