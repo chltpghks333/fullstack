@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
-import axios from 'axios'
+import personService from './services/personService'
 
 const App = () => {
     const [ persons, setPersons ] = useState([])
@@ -10,19 +10,45 @@ const App = () => {
     const [ newNumber, setNewNumber ] = useState('')
     const [ newSearch, setNewSearch ] = useState('')
 
+    useEffect(() => {
+        personService.getAll()
+            .then(response => {
+                setPersons(response.data)
+            })
+    },[])
+
     const addPerson = (event) => {
         event.preventDefault()
-        const personObject = {
+        const newPerson = {
             name: newName,
             number: newNumber
         }
+        const duplicate = persons.find(person => person.name===newName) 
 
-        const duplicates = persons.filter(person => person.name===newName) 
-
-        if(duplicates.length>0){
-            window.alert(`${newName} is already added to phonebook`)
+        if(duplicate!==undefined){
+            if(window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)){
+                const updatePerson = { ...duplicate, number: newNumber }
+                personService.update(duplicate.id, updatePerson) 
+                    .then(response => {
+                        setPersons(persons.map(person => person.id===duplicate.id ? response.data:person))
+                    })
+            }
         }else{
-            setPersons(persons.concat(personObject))
+            personService.create(newPerson)
+                .then(response => {
+                    setPersons(persons.concat(response.data))
+                })
+        }
+    }
+
+    const deletePerson = (event) => {
+        const name = event.target.name
+        const id = event.target.id
+        if(window.confirm(`Delete ${name}?`)) {
+            personService.erase(id)
+                .then(response => {
+                    setPersons(persons.filter(person => id!=person.id))
+                })
         }
     }
 
@@ -49,15 +75,6 @@ const App = () => {
         name: handleNameChange,
         number: handleNumberChange
     }
-    useEffect(() => {
-        axios
-            .get('http://localhost:3001/persons')
-            .then(response => {
-                setPersons(response.data) 
-            })
-
-    },[])
-
 
     return (
         <div>
@@ -66,7 +83,7 @@ const App = () => {
             <h2>add a new</h2>
             <PersonForm onSubmit={addPerson} states={states} handlers={handlers} />
             <h2>Numbers</h2>
-            <Persons personsToShow={personsToShow}/>
+            <Persons personsToShow={personsToShow} onClick={deletePerson}/>
 
         </div>
     )
