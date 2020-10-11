@@ -3,12 +3,14 @@ import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
 import personService from './services/personService'
+import Notification from './components/Notification'
 
 const App = () => {
     const [ persons, setPersons ] = useState([])
     const [ newName, setNewName ] = useState('')
     const [ newNumber, setNewNumber ] = useState('')
     const [ newSearch, setNewSearch ] = useState('')
+    const [ message, setMessage ] = useState(null)
 
     useEffect(() => {
         personService.getAll()
@@ -31,12 +33,27 @@ const App = () => {
                 personService.update(duplicate.id, updatePerson) 
                     .then(response => {
                         setPersons(persons.map(person => person.id===duplicate.id ? response.data:person))
+                        setMessage(`Updated ${newName}'s phone number`)
+                        setTimeout(() => {
+                            setMessage(null)
+                        }, 2000)
                     })
+                    .catch(error => {
+                        setMessage(`Information of ${newName} has already been removed from server`)
+                        setTimeout(() => {
+                            setMessage(null)
+                        }, 2000)
+                    })
+
             }
         }else{
             personService.create(newPerson)
                 .then(response => {
                     setPersons(persons.concat(response.data))
+                    setMessage(`Added ${newName}`)
+                    setTimeout(() => {
+                        setMessage(null)
+                    }, 2000)
                 })
         }
     }
@@ -79,6 +96,7 @@ const App = () => {
     return (
         <div>
             <h2>PhoneBook</h2>
+            <Notification msg={message} />
             <Filter newSearch={newSearch} onChange={handleSearchChange} />
             <h2>add a new</h2>
             <PersonForm onSubmit={addPerson} states={states} handlers={handlers} />
