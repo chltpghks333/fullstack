@@ -25,7 +25,7 @@
 
 >*Exercises 1.3-1.5*: Passing **arrays** as an argument, "props" (Finished) 
 
->*Part 1.c-1.d* **State Hooks*, **Destruction** finished right before *Rule of Hooks*
+>*Part 1.c-1.d* **State Hooks** **Destruction** finished right before **Rule of Hooks**
 
 2020/10/4
 >*Exercises 1.6-1.11*: **HTML table** unicafe exercises (Finished) 
