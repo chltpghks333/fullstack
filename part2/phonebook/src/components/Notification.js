@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Notification = ({ msg }) => {
+const Notification = ({msg}) => {
 
     const success = {
         color: 'green',
         background: 'lightgrey',
         fontSize: 20,
-        border: '4px solid green', 
+        border: '4px solid green',
         borderRadius: 5,
         padding: 10,
         marginBottom: 10
@@ -15,27 +15,27 @@ const Notification = ({ msg }) => {
         color: 'red',
         background: 'lightgrey',
         fontSize: 20,
-        border: '4px solid red', 
+        border: '4px solid red',
         borderRadius: 5,
         padding: 10,
         marginBottom: 10
     }
 
-    if(msg===null) {
+    if (msg === null) {
         return null
-    }else if(msg.includes('Information')) {
-        return (
-            <div style={fail}>
-                {msg}
-            </div>
-        )
-    }else {
+    } else if (msg.includes('Added')) {
         return (
             <div style={success}>
                 {msg}
             </div>
         )
-    } 
+    } else {
+        return (
+            <div style={fail}>
+                {msg}
+            </div>
+        )
+    }
 
 }
 
